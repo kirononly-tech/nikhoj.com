@@ -1,1 +1,1277 @@
+<!DOCTYPE html>
 
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="নিখোঁজ.com - বাংলাদেশে নিখোঁজ ও পাওয়া ব্যক্তির তথ্য খোঁজার নিরাপদ প্ল্যাটফর্ম">
+
+<title>নিখোঁজ.com | Lost & Found Bangladesh</title>
+
+<style>
+
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+body {
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+  background: #f5f7fb;
+
+  color: #172033;
+
+  line-height: 1.6;
+
+}
+
+header {
+
+  background: linear-gradient(135deg, #075e54, #087f5b);
+
+  color: white;
+
+  padding: 18px 20px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,.15);
+
+}
+
+.header-inner {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+}
+
+.logo {
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+}
+
+.logo span {
+
+  color: #ffe082;
+
+}
+
+nav {
+
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+}
+
+nav button {
+
+  border: 0;
+
+  background: rgba(255,255,255,.15);
+
+  color: white;
+
+  padding: 9px 13px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+}
+
+nav button:hover {
+
+  background: rgba(255,255,255,.28);
+
+}
+
+.hero {
+
+  background: white;
+
+  padding: 55px 20px;
+
+  text-align: center;
+
+}
+
+.hero h1 {
+
+  font-size: clamp(30px, 6vw, 52px);
+
+  margin-bottom: 12px;
+
+}
+
+.hero p {
+
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #5b6575;
+
+  font-size: 17px;
+
+}
+
+.search-box {
+
+  max-width: 700px;
+
+  margin: 25px auto 0;
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+.search-box input {
+
+  flex: 1;
+
+  padding: 15px;
+
+  border: 1px solid #d5dbe5;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+}
+
+.btn {
+
+  border: 0;
+
+  border-radius: 10px;
+
+  padding: 13px 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+.btn-primary {
+
+  background: #087f5b;
+
+  color: white;
+
+}
+
+.btn-danger {
+
+  background: #c62828;
+
+  color: white;
+
+}
+
+.btn-secondary {
+
+  background: #e9eef5;
+
+  color: #172033;
+
+}
+
+.container {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 35px 20px;
+
+}
+
+.section-title {
+
+  text-align: center;
+
+  margin-bottom: 25px;
+
+}
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 18px;
+
+}
+
+.card {
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(20,30,50,.07);
+
+}
+
+.card h3 {
+
+  margin-bottom: 8px;
+
+}
+
+.icon {
+
+  font-size: 35px;
+
+  margin-bottom: 10px;
+
+}
+
+.notice {
+
+  background: #fff8e1;
+
+  border-left: 5px solid #f9a825;
+
+  padding: 18px;
+
+  border-radius: 8px;
+
+  margin: 20px 0;
+
+}
+
+.safety {
+
+  background: #e8f5e9;
+
+  border-left: 5px solid #2e7d32;
+
+  padding: 18px;
+
+  border-radius: 8px;
+
+  margin: 20px 0;
+
+}
+
+.form-box {
+
+  background: white;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 18px rgba(20,30,50,.08);
+
+}
+
+.form-group {
+
+  margin-bottom: 16px;
+
+}
+
+.form-group label {
+
+  display: block;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+
+}
+
+.form-group input,
+
+.form-group textarea,
+
+.form-group select {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccd3df;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+}
+
+.form-group textarea {
+
+  min-height: 110px;
+
+  resize: vertical;
+
+}
+
+.checkbox {
+
+  display: flex;
+
+  gap: 8px;
+
+  align-items: flex-start;
+
+  margin: 15px 0;
+
+}
+
+.result {
+
+  margin-top: 20px;
+
+}
+
+.result-card {
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #e1e5eb;
+
+}
+
+.badge {
+
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+
+}
+
+.badge-missing {
+
+  background: #ffebee;
+
+  color: #b71c1c;
+
+}
+
+.badge-found {
+
+  background: #e8f5e9;
+
+  color: #1b5e20;
+
+}
+
+footer {
+
+  background: #172033;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 30px 20px;
+
+  margin-top: 30px;
+
+}
+
+.hidden {
+
+  display: none;
+
+}
+
+.small {
+
+  font-size: 13px;
+
+  color: #697386;
+
+}
+
+@media(max-width:650px) {
+
+  .header-inner {
+
+    flex-direction: column;
+
+  }
+
+  .search-box {
+
+    flex-direction: column;
+
+  }
+
+  nav {
+
+    justify-content: center;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="logo">নিখোঁজ<span>.com</span></div>
+
+    <nav>
+
+      <button onclick="showSection('home')">হোম</button>
+
+      <button onclick="showSection('search')">খুঁজুন</button>
+
+      <button onclick="showSection('report')">রিপোর্ট করুন</button>
+
+      <button onclick="showSection('safety')">নিরাপত্তা</button>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+<section id="home" class="page">
+
+  <div class="hero">
+
+    <h1>নিখোঁজ মানুষকে খুঁজে পেতে সাহায্য করুন</h1>
+
+    <p>
+
+      নিখোঁজ ও পাওয়া ব্যক্তির তথ্য দায়িত্বশীলভাবে প্রকাশ,
+
+      যাচাই এবং পরিবারের কাছে পৌঁছে দেওয়ার একটি নিরাপদ উদ্যোগ।
+
+    </p>
+
+    <div class="search-box">
+
+      <input id="homeSearch"
+
+             type="search"
+
+             placeholder="নাম, এলাকা বা রিপোর্ট নম্বর লিখুন">
+
+      <button class="btn btn-primary"
+
+              onclick="searchFromHome()">খুঁজুন</button>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="safety">
+
+      <strong>🛡️ নিরাপত্তা প্রথম</strong>
+
+      <p>
+
+        কোনো ব্যক্তির ব্যক্তিগত তথ্য, ব্যাংক তথ্য, পাসওয়ার্ড,
+
+        OTP বা সংবেদনশীল তথ্য প্রকাশ করবেন না।
+
+      </p>
+
+    </div>
+
+    <div class="section-title">
+
+      <h2>আমাদের উদ্দেশ্য</h2>
+
+      <p>দ্রুত তথ্য পৌঁছানো, ভুল তথ্য কমানো এবং মানুষকে নিরাপদ রাখা।</p>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="icon">🔎</div>
+
+        <h3>নিখোঁজ খুঁজুন</h3>
+
+        <p>নিখোঁজ ব্যক্তির রিপোর্ট খুঁজে দেখুন।</p>
+
+        <button class="btn btn-secondary"
+
+                onclick="showSection('search')">
+
+          খুঁজুন
+
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">📢</div>
+
+        <h3>রিপোর্ট করুন</h3>
+
+        <p>নিখোঁজ বা পাওয়া ব্যক্তির তথ্য জমা দিন।</p>
+
+        <button class="btn btn-primary"
+
+                onclick="showSection('report')">
+
+          রিপোর্ট
+
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">🛡️</div>
+
+        <h3>নিরাপদ ব্যবহার</h3>
+
+        <p>প্রতারণা ও ভুল তথ্য থেকে নিজেকে সুরক্ষিত রাখুন।</p>
+
+        <button class="btn btn-secondary"
+
+                onclick="showSection('safety')">
+
+          নিয়ম দেখুন
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="search" class="page hidden">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>🔎 রিপোর্ট খুঁজুন</h2>
+
+      <p>নাম, এলাকা বা রিপোর্ট নম্বর দিয়ে অনুসন্ধান করুন।</p>
+
+    </div>
+
+    <div class="form-box">
+
+      <div class="form-group">
+
+        <label>অনুসন্ধান</label>
+
+        <input id="searchInput"
+
+               type="search"
+
+               placeholder="যেমন: ঢাকা / Rahim / M-1001">
+
+      </div>
+
+      <button class="btn btn-primary"
+
+              onclick="performSearch()">
+
+        Search
+
+      </button>
+
+      <div id="searchResults" class="result"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="report" class="page hidden">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>📢 নতুন রিপোর্ট</h2>
+
+      <p>সঠিক তথ্য দিন। মিথ্যা বা বিভ্রান্তিকর রিপোর্ট গ্রহণযোগ্য নয়।</p>
+
+    </div>
+
+    <div class="form-box">
+
+      <div class="notice">
+
+        ⚠️ এই demo version-এ রিপোর্টটি শুধু আপনার এই browser-এ
+
+        অস্থায়ীভাবে সংরক্ষিত হবে। এখনো public database চালু করা হয়নি।
+
+      </div>
+
+      <div class="form-group">
+
+        <label>রিপোর্টের ধরন</label>
+
+        <select id="reportType">
+
+          <option value="missing">নিখোঁজ ব্যক্তি</option>
+
+          <option value="found">পাওয়া ব্যক্তি</option>
+
+        </select>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>ব্যক্তির নাম *</label>
+
+        <input id="personName"
+
+               type="text"
+
+               maxlength="100"
+
+               placeholder="পূর্ণ নাম">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>শেষ দেখা/পাওয়া এলাকা *</label>
+
+        <input id="location"
+
+               type="text"
+
+               maxlength="150"
+
+               placeholder="জেলা / থানা / এলাকা">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>বয়স</label>
+
+        <input id="age"
+
+               type="number"
+
+               min="0"
+
+               max="120"
+
+               placeholder="বয়স">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>তারিখ</label>
+
+        <input id="reportDate"
+
+               type="date">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>বিবরণ</label>
+
+        <textarea id="description"
+
+                  maxlength="1000"
+
+                  placeholder="প্রয়োজনীয় তথ্য লিখুন"></textarea>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>যোগাযোগের নম্বর</label>
+
+        <input id="contact"
+
+               type="tel"
+
+               maxlength="30"
+
+               placeholder="প্রয়োজনে যোগাযোগের নম্বর">
+
+      </div>
+
+      <div class="checkbox">
+
+        <input id="agreement" type="checkbox">
+
+        <label for="agreement">
+
+          আমি নিশ্চিত করছি যে আমি ইচ্ছাকৃতভাবে মিথ্যা তথ্য,
+
+          প্রতারণামূলক তথ্য বা অন্যের ক্ষতি করার উদ্দেশ্যে
+
+          এই রিপোর্ট জমা দিচ্ছি না।
+
+        </label>
+
+      </div>
+
+      <button class="btn btn-primary"
+
+              onclick="submitReport()">
+
+        রিপোর্ট জমা দিন
+
+      </button>
+
+      <p id="submitMessage" class="small"></p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="safety" class="page hidden">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>🛡️ নিরাপত্তা ও নিয়ম</h2>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>🚫 প্রতারণা নিষিদ্ধ</h3>
+
+        <p>
+
+          মিথ্যা নিখোঁজ রিপোর্ট, ভুয়া পরিচয়,
+
+          টাকা চাওয়া বা প্রতারণামূলক তথ্য দেওয়া নিষিদ্ধ।
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>🔐 ব্যক্তিগত তথ্য</h3>
+
+        <p>
+
+          NID, পাসপোর্ট, ব্যাংক অ্যাকাউন্ট,
+
+          OTP, পাসওয়ার্ড বা অতিরিক্ত ব্যক্তিগত তথ্য
+
+          প্রকাশ করবেন না।
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>👮 জরুরি পরিস্থিতি</h3>
+
+        <p>
+
+          কেউ নিখোঁজ হলে স্থানীয় পুলিশ/আইনশৃঙ্খলা বাহিনীর
+
+          সঙ্গে যোগাযোগ করাও জরুরি।
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>⚠️ নিজে আইন হাতে নেবেন না</h3>
+
+        <p>
+
+          কোনো সন্দেহভাজন ব্যক্তিকে নিজে আটক,
+
+          ভয় দেখানো বা আক্রমণ করা যাবে না।
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>💰 টাকা পাঠাবেন না</h3>
+
+        <p>
+
+          কোনো রিপোর্ট দেখে অপরিচিত ব্যক্তিকে
+
+          টাকা পাঠানোর আগে পরিচয় ও তথ্য যাচাই করুন।
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>📋 যাচাই ব্যবস্থা</h3>
+
+        <p>
+
+          ভবিষ্যৎ version-এ administrator verification,
+
+          report review এবং abuse reporting যুক্ত করা হবে।
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <strong>নিখোঁজ.com</strong>
+
+  <p>Lost & Found Bangladesh</p>
+
+  <p class="small">
+
+    একটি নিরাপদ ও দায়িত্বশীল community platform তৈরির উদ্যোগ।
+
+  </p>
+
+</footer>
+
+<script>
+
+const demoReports = [
+
+  {
+
+    id: "M-1001",
+
+    type: "missing",
+
+    name: "Demo Person",
+
+    location: "Dhaka",
+
+    age: 35,
+
+    date: "2026-08-20",
+
+    description: "এটি একটি demo report।",
+
+    contact: ""
+
+  },
+
+  {
+
+    id: "F-1002",
+
+    type: "found",
+
+    name: "Demo Found Person",
+
+    location: "Chattogram",
+
+    age: 28,
+
+    date: "2026-08-22",
+
+    description: "এটি একটি demo report।",
+
+    contact: ""
+
+  }
+
+];
+
+function showSection(sectionId) {
+
+  document.querySelectorAll(".page").forEach(function(section) {
+
+    section.classList.add("hidden");
+
+  });
+
+  const selected = document.getElementById(sectionId);
+
+  if (selected) {
+
+    selected.classList.remove("hidden");
+
+    window.scrollTo({
+
+      top: 0,
+
+      behavior: "smooth"
+
+    });
+
+  }
+
+}
+
+function searchFromHome() {
+
+  const value = document.getElementById("homeSearch").value.trim();
+
+  showSection("search");
+
+  document.getElementById("searchInput").value = value;
+
+  performSearch();
+
+}
+
+function getAllReports() {
+
+  let saved = [];
+
+  try {
+
+    saved = JSON.parse(
+
+      localStorage.getItem("nikhojReports") || "[]"
+
+    );
+
+  } catch(e) {
+
+    saved = [];
+
+  }
+
+  return demoReports.concat(saved);
+
+}
+
+function performSearch() {
+
+  const query =
+
+    document.getElementById("searchInput").value
+
+    .trim()
+
+    .toLowerCase();
+
+  const results =
+
+    document.getElementById("searchResults");
+
+  const reports = getAllReports();
+
+  if (!query) {
+
+    results.innerHTML =
+
+      "<p>অনুসন্ধানের জন্য কিছু লিখুন।</p>";
+
+    return;
+
+  }
+
+  const matches = reports.filter(function(report) {
+
+    return (
+
+      report.id.toLowerCase().includes(query) ||
+
+      report.name.toLowerCase().includes(query) ||
+
+      report.location.toLowerCase().includes(query)
+
+    );
+
+  });
+
+  if (matches.length === 0) {
+
+    results.innerHTML =
+
+      "<div class='notice'>" +
+
+      "কোনো matching report পাওয়া যায়নি।" +
+
+      "</div>";
+
+    return;
+
+  }
+
+  results.innerHTML = matches.map(function(report) {
+
+    const badge =
+
+      report.type === "missing"
+
+      ? "<span class='badge badge-missing'>নিখোঁজ</span>"
+
+      : "<span class='badge badge-found'>পাওয়া গেছে</span>";
+
+    return `
+
+      <div class="result-card">
+
+        ${badge}
+
+        <h3>${escapeHTML(report.name)}</h3>
+
+        <p><strong>Report:</strong> ${escapeHTML(report.id)}</p>
+
+        <p><strong>এলাকা:</strong> ${escapeHTML(report.location)}</p>
+
+        <p><strong>বয়স:</strong> ${escapeHTML(String(report.age || "N/A"))}</p>
+
+        <p><strong>তারিখ:</strong> ${escapeHTML(report.date || "N/A")}</p>
+
+        <p>${escapeHTML(report.description || "")}</p>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+function submitReport() {
+
+  const type =
+
+    document.getElementById("reportType").value;
+
+  const name =
+
+    document.getElementById("personName").value.trim();
+
+  const location =
+
+    document.getElementById("location").value.trim();
+
+  const age =
+
+    document.getElementById("age").value;
+
+  const date =
+
+    document.getElementById("reportDate").value;
+
+  const description =
+
+    document.getElementById("description").value.trim();
+
+  const contact =
+
+    document.getElementById("contact").value.trim();
+
+  const agreement =
+
+    document.getElementById("agreement").checked;
+
+  const message =
+
+    document.getElementById("submitMessage");
+
+  if (!name || !location) {
+
+    message.textContent =
+
+      "❌ নাম এবং এলাকা অবশ্যই দিতে হবে।";
+
+    return;
+
+  }
+
+  if (!agreement) {
+
+    message.textContent =
+
+      "❌ রিপোর্ট জমা দেওয়ার আগে declaration গ্রহণ করুন।";
+
+    return;
+
+  }
+
+  const prefix =
+
+    type === "missing" ? "M-" : "F-";
+
+  const randomNumber =
+
+    Math.floor(1000 + Math.random() * 9000);
+
+  const report = {
+
+    id: prefix + randomNumber,
+
+    type: type,
+
+    name: name,
+
+    location: location,
+
+    age: age,
+
+    date: date,
+
+    description: description,
+
+    contact: contact
+
+  };
+
+  let saved = [];
+
+  try {
+
+    saved = JSON.parse(
+
+      localStorage.getItem("nikhojReports") || "[]"
+
+    );
+
+  } catch(e) {
+
+    saved = [];
+
+  }
+
+  saved.push(report);
+
+  localStorage.setItem(
+
+    "nikhojReports",
+
+    JSON.stringify(saved)
+
+  );
+
+  message.innerHTML =
+
+    "✅ রিপোর্ট তৈরি হয়েছে। আপনার Report ID: " +
+
+    "<strong>" + escapeHTML(report.id) + "</strong>" +
+
+    "<br>⚠️ এটি বর্তমানে demo/local storage-এ আছে।";
+
+  document.getElementById("personName").value = "";
+
+  document.getElementById("location").value = "";
+
+  document.getElementById("age").value = "";
+
+  document.getElementById("reportDate").value = "";
+
+  document.getElementById("description").value = "";
+
+  document.getElementById("contact").value = "";
+
+  document.getElementById("agreement").checked = false;
+
+}
+
+function escapeHTML(value) {
+
+  return String(value)
+
+    .replace(/&/g, "&amp;")
+
+    .replace(/</g, "&lt;")
+
+    .replace(/>/g, "&gt;")
+
+    .replace(/"/g, "&quot;")
+
+    .replace(/'/g, "&#039;");
+
+}
+
+showSection("home");
+
+</script>
+
+</body>
+
+</html>
